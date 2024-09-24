@@ -1,5 +1,5 @@
 export default class LOModell {
-  #LISTA = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+  #LISTA = [true, true, true,true,true,true,true,true,true ];
   #aktErtek;
   #db;
 
@@ -33,18 +33,18 @@ export default class LOModell {
   kapcsolo(index) {
     this.#LISTA[index] = !this.#LISTA[index];
 
-    if (this.#LISTA[index] % 3 != 0) {
+    if (index % 3 != 0) {
       this.#LISTA[index - 1] = !this.#LISTA[index - 1];
     }
 
-    if (this.#LISTA[index] % 3 != 2) {
+    if (index % 3 != 2) {
       this.#LISTA[index + 1] = !this.#LISTA[index + 1];
     }
 
-    if (this.#LISTA[index] < 6) {
+    if (index < 6) {
       this.#LISTA[index + 3] = !this.#LISTA[index + 3];
     }
-    if (this.#LISTA[index] > 2) {
+    if (index > 2) {
       this.#LISTA[index - 3] = !this.#LISTA[index - 3];
     }
   }
